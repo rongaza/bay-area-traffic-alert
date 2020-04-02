@@ -12,6 +12,9 @@
 /build
 
 # misc
+.netlify/
+built-lambda
+.env
 .DS_Store
 .env.local
 .env.development.local
