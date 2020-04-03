@@ -55,7 +55,7 @@ function App() {
 						{...viewportState}
 						width={'100%'}
 						height={'100%'}
-						mapboxApiAccessToken={MAPBOX_TOKEN}
+						mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
 						mapStyle="mapbox://styles/mapbox/light-v9"
 						onViewportChange={viewportState =>
 							viewportDispatch({
