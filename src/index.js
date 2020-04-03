@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './App.css';
-console.log(process.env.REACT_APP_TRAFFIC_DATA_TOKEN);
+console.log(process.env);
 ReactDOM.render(
 	<React.StrictMode>
 		<App />
