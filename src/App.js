@@ -16,8 +16,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import fetchAPI from './api/fetchAPI';
-// const { MAPBOX_TOKEN } = process.env;
-// console.log(process.env);
+const { MAPBOX_TOKEN } = process.env;
+console.log(process.env);
 function App() {
 	const [viewportState, viewportDispatch] = useReducer(viewportReducer, {
 		latitude: 37.8044,
@@ -55,7 +55,7 @@ function App() {
 						{...viewportState}
 						width={'100%'}
 						height={'100%'}
-						mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+						mapboxApiAccessToken={MAPBOX_TOKEN}
 						mapStyle="mapbox://styles/mapbox/light-v9"
 						onViewportChange={viewportState =>
 							viewportDispatch({
