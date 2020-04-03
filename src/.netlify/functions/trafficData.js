@@ -9,7 +9,7 @@ exports.handler = async function(event, context, callback) {
 
 	if (httpMethod === 'GET') {
 		try {
-			const response = await axios.get(`${url}${process.env.TRAFFIC_DATA_TOKEN}`);
+			const response = await axios.get(`${url}${TRAFFIC_DATA_TOKEN}`);
 			return {
 				statusCode: 200,
 				body: response.data,
