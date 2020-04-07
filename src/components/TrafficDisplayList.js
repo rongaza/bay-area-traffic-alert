@@ -5,13 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCarCrash, faMapMarkerAlt, faHardHat } from '@fortawesome/free-solid-svg-icons';
 import { Card } from 'react-bootstrap';
 
-import '../App.css';
-
 const TrafficDisplayList = ({ events }) => {
 	return (
 		<div id="traffic-display">
 			<ul>
-				{events.map(event => (
+				{events.map((event) => (
 					<EventItem event={event} key={event.id} />
 				))}
 			</ul>
@@ -22,7 +20,9 @@ const TrafficDisplayList = ({ events }) => {
 export default TrafficDisplayList;
 
 const EventItem = ({ event }) => {
-	const icon = type => {
+	const { markersDispatch } = useContext(Context);
+
+	const icon = (type) => {
 		switch (type) {
 			case 'incident'.toUpperCase():
 				return faCarCrash;
@@ -32,8 +32,6 @@ const EventItem = ({ event }) => {
 				return faMapMarkerAlt;
 		}
 	};
-
-	const { markersDispatch } = useContext(Context);
 
 	const handleOnMouseOver = () => {
 		markersDispatch({ type: 'HIGHLIGHT_MARKER', payload: event.id });

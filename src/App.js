@@ -16,8 +16,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import fetchAPI from './api/fetchAPI';
-const { MAPBOX_TOKEN } = process.env;
-console.log(process.env);
+
+// console.log(process.env);
+
 function App() {
 	const [viewportState, viewportDispatch] = useReducer(viewportReducer, {
 		latitude: 37.8044,
@@ -38,8 +39,8 @@ function App() {
 		padding: '10px',
 	};
 
-	const handleToggleSidebar = e => {
-		setToggleSidebar(toggleSidebar => setToggleSidebar(!toggleSidebar));
+	const handleToggleSidebar = (e) => {
+		setToggleSidebar((toggleSidebar) => setToggleSidebar(!toggleSidebar));
 	};
 
 	useEffect(() => {
@@ -57,7 +58,7 @@ function App() {
 						height={'100%'}
 						mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
 						mapStyle="mapbox://styles/mapbox/light-v9"
-						onViewportChange={viewportState =>
+						onViewportChange={(viewportState) =>
 							viewportDispatch({
 								type: 'SET_VIEWPORT',
 								payload: viewportState,
@@ -65,7 +66,7 @@ function App() {
 						}
 					>
 						{!isLoading &&
-							markersState.markers.map(mark => {
+							markersState.markers.map((mark) => {
 								return <MapMarker mark={mark} key={mark.id} />;
 							})}
 

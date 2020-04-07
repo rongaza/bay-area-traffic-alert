@@ -12,7 +12,8 @@
 /build
 
 # misc
-
+keys.js
+lambda
 built-lambda
 .env
 .DS_Store
