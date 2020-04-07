@@ -5,7 +5,7 @@ const NavBar = () => {
 	return (
 		<div>
 			<Navbar fixed="top" bg="dark" variant="dark">
-				<Navbar.Brand href="#home">Bay Area Traffic Alert</Navbar.Brand>
+				<Navbar.Brand>Bay Area Traffic Alert</Navbar.Brand>
 			</Navbar>
 		</div>
 	);
