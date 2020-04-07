@@ -1,8 +1,7 @@
 import axios from 'axios';
-import { trafficToken } from '../keys';
 
 const url = 'http://api.511.org/traffic/events?api_key=';
-const token = process.env.TRAFFIC_DATA_TOKEN !== undefined ? process.env.TRAFFIC_DATA_TOKEN : trafficToken;
+const token = process.env.TRAFFIC_DATA_TOKEN;
 
 exports.handler = async function (event, context, callback) {
 	const { httpMethod } = event;
